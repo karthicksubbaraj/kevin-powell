@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: salmon;
+  --clr-body: black;
+  --clr-bg: lightgray;
+}
+
+body {
+  font-family: basic-sans, sans-seriff;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.125em;
+  color: var(--clr-body);
+  background: var(--clr-bg);
+}
+
+.content {
+  width: 70vw;
+  background: white;
+  padding: 3em;
+  -webkit-box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.search-bar {
+  --size: 60px;
+  border: 2px solid var(--clr-primary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 50px;
+  height: var(--size);
+  width: var(--size);
+  padding: 3px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: width 300ms cubic-bezier(0.18, 0.89, 0.32, 1.18);
+  transition: width 300ms cubic-bezier(0.18, 0.89, 0.32, 1.18);
+}
+
+.search-bar-input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  opacity: 0;
+  font-size: 1.5rem;
+  padding: 0 0.5em;
+  border: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  line-height: calc(var(--size) - 3px);
+  cursor: pointer;
+}
+
+.search-bar-input:focus {
+  outline: 0;
+}
+
+.search-bar-submit {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: 50%;
+  width: calc(var(--size) - 10px);
+  height: calc(var(--size) - 10px);
+  margin-left: auto;
+  -webkit-transition: background 150ms ease-in-out;
+  transition: background 150ms ease-in-out;
+}
+
+.search-bar:focus-within {
+  width: 100%;
+}
+
+.search-bar:focus-within .search-bar-input {
+  opacity: 1;
+  cursor: initial;
+}
+
+.search-bar:focus-within .search-bar-submit {
+  background-color: var(--clr-primary);
+  color: white;
+}
+
+.search-bar:focus-within .search-bar-submit:focus, .search-bar:focus-within .search-bar-submit:hover {
+  outline: 0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+/*# sourceMappingURL=styles.css.map */
